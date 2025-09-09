@@ -1,68 +1,124 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Global reset and styling */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #333;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Container styling for the app */
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Header styling */
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling the question text */
+.question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Option button styling */
+.option {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: #e7ecf0;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  text-align: left;
+  transition: background 0.3s, border 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.option:hover {
+  background: #d6dde5;
+}
+
+.option.selected {
+  background: oklch(92.9% 0.013 255.508);
+  border: 2px solid oklch(55.4% 0.046 257.417);
+  color: oklch(37.2% 0.044 257.287);
+}
+
+/* Navigation button styles */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background: #42a5f5;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.nav-buttons button:hover {
+  background: #1e88e5;
+}
+
+.nav-buttons button:disabled {
+  background: #a0c4e3;
+  cursor: not-allowed;
+}
+
+.result-button {
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  background: oklch(55.4% 0.046 257.417);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.result-button:hover {
+  background: #1e88e5;
+}
+
+/* Score display styling */
+.score {
+  font-size: 1.4em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.correct-answer {
+  color: oklch(70.4% 0.14 182.503);
+}
+
+.incorrect-answer {
+  color: oklch(64.5% 0.246 16.439);
+}
+
+p.result {
+  text-align: center;
+  margin: 40px;
+}
+
+.resultButtonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
